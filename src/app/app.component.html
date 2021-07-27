@@ -1,50 +1,16 @@
-<nav>
-  <h1>COVID-19 Tracker</h1>
-</nav>
-<div class="mainContainer">
-  <div class="d2">
-    <div id="countryNewsSideBar" class="countryNewsSideBar collapsed" style="float: left; height: 100%;">
-      <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">×</a>
-      <div class="countryNewsFeed"></div>
-    </div>
-    <div id="mapDiv" class="expanded" style="float: left; height: 100%;">
-      <div>
-      <button class="openbtn" (click)="openNav($event)" style="visibility:hidden">☰ Country News</button>
-      <input list="countriesSelect" id="countriesSelectInput" (click) = "$event.target.select();"  name="countriesSelectInput" value = "{{selectedCountry.Country}}" (change) = "onCountrySelected($event.target.value)"/>
-      <datalist id="countriesSelect">
-        <option *ngFor="let country of countries" data-value = "{{country.Country}}" [selected] = "selectedCountry.ISO2 == country.ISO2"></option>
-      </datalist>
-      </div>
-      <div id="world-map"></div>
-      <div class="chart" style="text-align:center;height: 350px" *ngIf="chartOptions">
-        <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis"
-          [yaxis]="chartOptions.yaxis" [colors]="chartOptions.colors" [title]="chartOptions.title"></apx-chart>
-      </div>
-    </div>
-  </div>
-  <div class="d1">
-    <div class="pieChartsContainer">
-      <div class="pieChart" *ngIf="worldTotalsChartOptions">
-        <h3>Nombre total de cas</h3>
-        <apx-chart [series]="worldTotalsChartOptions.series" [chart]="worldTotalsChartOptions.chart"
-          [labels]="worldTotalsChartOptions.labels" [responsive]="worldTotalsChartOptions.responsive"
-          [legend]="worldTotalsChartOptions.legend" [plotOptions]="worldTotalsChartOptions.options"
-          [colors]="worldTotalsChartOptions.colors" [stroke]="worldTotalsChartOptions.stroke"></apx-chart>
-      </div>
-      <div class="pieChart" *ngIf="worldNewTotalsChartOptions">
-        <h3>Nombre de nouveaux cas</h3>
-        <apx-chart [series]="worldNewTotalsChartOptions.series" [chart]="worldNewTotalsChartOptions.chart"
-          [labels]="worldNewTotalsChartOptions.labels" [legend]="worldNewTotalsChartOptions.legend"
-          [responsive]="worldNewTotalsChartOptions.responsive" [plotOptions]="worldNewTotalsChartOptions.options"
-          [colors]="worldNewTotalsChartOptions.colors" [stroke]="worldNewTotalsChartOptions.stroke"></apx-chart>
-      </div>
-    </div>
-  </div>
- <!--
-  <div class="d0">
-    <h3>Actualités</h3>
-    <div class="newsFeed"></div>
-  </div>
-  -->
-  <div class="hiddenFooter"></div>
+
+<div class="menu">
+ <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/login">Login </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/Register">Register </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/Live-stat">Live Stats </a>
+    </li>
+  </ul>
 </div>
+
+  <router-outlet></router-outlet>

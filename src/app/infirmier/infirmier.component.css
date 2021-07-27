@@ -1,0 +1,23 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+
+.bg-form {
+  background: #000c;
+  color: #fff;
+  padding: 5% 5%;
+  margin: 5%;
+}
+
+input#mat-input-0 {
+  color: #000;
+}

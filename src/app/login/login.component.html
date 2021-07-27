@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="bg-form">
+    <h1>Login</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      Email <br>
+      <input class="form-control" type="email"  formControlName="email" name="">
+      Password <br>
+      <input class="form-control" type="password" formControlName="password" name="">
+      <br>
+      <button class="btn btn-info" type="submit" >
+        Login
+      </button>
+    </form>
+  </div>
+</div>

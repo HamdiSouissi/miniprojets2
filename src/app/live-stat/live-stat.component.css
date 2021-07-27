@@ -7,22 +7,6 @@
   border: none;
 }
 
-.menu {
-  background: #419d92;
-  color: #fff !important;
-}
-
-.menu a {
-  color: #fff;
-}
-.menu a:hover, .menu a:active ,.menu a:focus {
-  background: #fff;
-  color:#419d92;
-  text-decoration:none;
-  border-radius:0;
-  border:1px solid transparent;
-}
-
 .openbtn:hover {
   background-color: #444;
 }
@@ -76,6 +60,7 @@ a:hover {
   height:100%;
   padding-top: 55px;
   margin:0 12.5px;
+  min-height: 660px;
 }
 
 .d0, .d1{
