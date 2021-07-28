@@ -53,7 +53,6 @@ users=[];
 
   constructor(private userService  :  UsersService,public dialog: MatDialog)
    {
-    this.dataSource = new MatTableDataSource(this.users);
     // Create 100 users
 
 
@@ -65,14 +64,15 @@ users=[];
 getAllUsers(){
   this.userService.getUsersByRole("Infirmier").subscribe(res =>{
     this.users=res
-    this.dataSource.data=this.users
+    this.dataSource = new MatTableDataSource(this.users);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
 
   }
   )
 }
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+
 
 
   }
@@ -97,6 +97,7 @@ getAllUsers(){
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      this.getAllUsers();
 
     });
   }
@@ -104,6 +105,7 @@ getAllUsers(){
   delete(email){
     console.log("here",email)
     this.userService.delete(email).subscribe();
+    this.getAllUsers();
   }
 
 
@@ -124,6 +126,7 @@ openDialogUpdate(email,firstName,lastName): void {
 
   dialogRef.afterClosed().subscribe(result => {
     console.log('The dialog was closed');
+    this.getAllUsers();
 
   });
 }
