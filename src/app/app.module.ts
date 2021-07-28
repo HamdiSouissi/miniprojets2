@@ -14,14 +14,17 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpErrorHandler } from './services/http-error-handler.service';
 import { MessageService } from './services/message.service';
 import { LiveStatComponent } from './live-stat/live-stat.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { InfirmierComponent } from './infirmier/infirmier.component';
-import { PatientComponent } from './patient/patient.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DialogOverviewExampleDialog, InfirmierComponent, updateInfirmier } from './infirmier/infirmier.component';
+import { PatientComponent, PatientDialog, updatePatient } from './patient/patient.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table'
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MDCDialog } from '@material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 @NgModule({
@@ -32,7 +35,11 @@ import { MatInputModule } from '@angular/material/input';
     DashboardComponent,
     LiveStatComponent,
     InfirmierComponent,
-    PatientComponent
+    PatientComponent,
+    DialogOverviewExampleDialog,
+    updateInfirmier,
+    PatientDialog,
+    updatePatient
   ],
   imports: [
     BrowserModule,
@@ -44,7 +51,11 @@ import { MatInputModule } from '@angular/material/input';
     MatTableModule,
     MatPaginatorModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule,
+    FormsModule,
+    MatFormFieldModule
+
   ],
   providers: [CovidDataService, DatePipe,HttpErrorHandler, MessageService],
   bootstrap: [AppComponent]

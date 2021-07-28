@@ -1,0 +1,58 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 20%;
+}
+
+.bg-form {
+  background: #000c;
+  color: #fff;
+  padding: 5% 5%;
+  margin: 5%;
+}
+
+input#mat-input-0 {
+  color: #fff;
+}
+
+.btn{
+ margin: 5px;
+ font-size: 10px;;
+}
+
+#mat-dialog-0 {
+  background: #000000b8 !important;
+}
+
+.ng-invalid.ng-touched.ng-dirty {
+  color: #fff !important;
+}
+.mat-dialog-container {
+  background: #000000c2 !important;
+  color: #fff !important;
+}
+div#cdk-overlay-0, .cdk-overlay-pane {
+  width: 100% !important;
+}
+.cdk-overlay-pane{
+  width: 350px !important;
+}
+
+
+.mat-dialog-title{
+  color: #000 !important;
+}
+
+.mat-h1, .mat-headline, .mat-typography h1 {
+  font: 400 24px/32px Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  margin: 0 0 16px;
+  color: #000 !important;
+}

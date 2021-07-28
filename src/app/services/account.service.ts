@@ -60,11 +60,11 @@ export class AccountService {
         return this.http.get<User>(`${environment.apiUrl}/users/${id}`);
     }
 
-    update(id, params) {
-        return this.http.put(`${environment.apiUrl}/users/${id}`, params)
+    update(email, params) {
+        return this.http.put(`${environment.apiUrl}/infirmier/${email}`, params)
             .pipe(map(x => {
                 // update stored user if the logged in user updated their own record
-                if (id == this.userValue.id) {
+                if (email == this.userValue.email) {
                     // update local storage
                     const user = { ...this.userValue, ...params };
                     localStorage.setItem('user', JSON.stringify(user));
