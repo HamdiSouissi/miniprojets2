@@ -4,6 +4,8 @@ import { HttpHeaders } from '@angular/common/http';
 import { HttpErrorHandler, HandleError } from './http-error-handler.service';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +32,16 @@ export class UsersService {
       .pipe(
         catchError(this.handleError('getUsers', null))
       )
+    }
+
+
+    getUsersByRole(role):Observable<User[]>{
+      return  this.http.get<User[]>(`${environment.apiUrl}/infirmier/${role}`);
+
+
+    }
+    delete(email){
+      return  this.http.delete(`${environment.apiUrl}/infirmier/${email}`);
+
     }
 }
