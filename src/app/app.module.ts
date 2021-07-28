@@ -16,7 +16,7 @@ import { MessageService } from './services/message.service';
 import { LiveStatComponent } from './live-stat/live-stat.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DialogOverviewExampleDialog, InfirmierComponent, updateInfirmier } from './infirmier/infirmier.component';
-import { PatientComponent } from './patient/patient.component';
+import { PatientComponent, PatientDialog, updatePatient } from './patient/patient.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table'
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -37,7 +37,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     InfirmierComponent,
     PatientComponent,
     DialogOverviewExampleDialog,
-    updateInfirmier
+    updateInfirmier,
+    PatientDialog,
+    updatePatient
   ],
   imports: [
     BrowserModule,
