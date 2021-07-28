@@ -1,14 +1,14 @@
 .openbtn {
   font-size: 15px;
   cursor: pointer;
-  background-color:#419d92;
+  background-color:#2b2f30a1;
   color: black;
   padding: 10px 15px;
   border: none;
 }
 
 .menu {
-  background: #419d92;
+  background: #2b2f30a1;
   color: #fff !important;
 }
 
@@ -17,7 +17,7 @@
 }
 .menu a:hover, .menu a:active ,.menu a:focus {
   background: #fff;
-  color:#419d92;
+  color:#2b2f30a1;
   text-decoration:none;
   border-radius:0;
   border:1px solid transparent;
@@ -124,7 +124,7 @@ width : 250px;
 float: right;
 width: 150px;
 height: 40px;
-border-color: #419d92;
+border-color: #2b2f30a1;
 border-width: thick;
 border-style: solid;
 background: border-box;

@@ -20,6 +20,8 @@ import { WorldTotals } from './models/WorldTotals';
 import { CountrySummary } from './models/CountrySummary';
 import { CountryNews } from './models/CountryNews';
 import { CountriesTotalsDetails, CountriesTotalsDetailss } from './models/CountriesTotalsDetails';
+import { User } from './models/user';
+import { AccountService } from './services/account.service';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -68,12 +70,14 @@ export class AppComponent implements OnInit {
   selectedCountryNews: CountryNews;
   isCountryNewsExpanded: boolean = false;
   worldMap: any;
+  user:any;
   //#endregion
 
-  constructor(private _covidDataService: CovidDataService) {
+  constructor(private _covidDataService: CovidDataService,private accountService: AccountService) {
     this.selectedCountry = { Slug: "tunisia", ISO2: "TN", Country: "Tunisia" };
 
     this.covidDataSVC = _covidDataService;
+
   }
 
   ngOnInit(): void {
@@ -91,6 +95,7 @@ export class AppComponent implements OnInit {
     });
 
     this.getCountryCovidData();
+    this.user=JSON.parse(localStorage.getItem('user'));
   }
 
   ngAfterViewInit() {
@@ -105,6 +110,9 @@ export class AppComponent implements OnInit {
     this._covidDataService.getCountriesDetails().subscribe(res => {
       this.countriesTotalsDetails = res;
     });
+  }
+  logout(){
+    this.accountService.logout();
   }
 
   private initializeWHOLatestNews(): void {

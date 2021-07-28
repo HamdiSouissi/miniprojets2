@@ -1,16 +1,28 @@
 
 <div class="menu">
- <ul class="nav nav-tabs">
+  <div style="float: right; margin: 10px; margin-top: 2px;" *ngIf="user"> <a class="nav-link" (click)="logout()">logout </a></div>
+
+  <div style="float: right; margin: 10px;" *ngIf="user">Hi, {{user.firstName}} {{user.lastName}}</div>
+
+  <ul class="nav nav-tabs">
     <li class="nav-item">
       <a class="nav-link" routerLink="/login">Login </a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="user && user.role=='Admin'">
       <a class="nav-link" routerLink="/Register">Register </a>
+    </li>
+    <li class="nav-item" *ngIf="user &&user.role=='Admin'">
+      <a class="nav-link" routerLink="/infirmier">Nurses </a>
+    </li>
+    <li class="nav-item" *ngIf="user && (user.role=='Admin' ||user.role=='Infirmier')">
+      <a class="nav-link" routerLink="/patient">Patients </a>
     </li>
     <li class="nav-item">
       <a class="nav-link" routerLink="/Live-stat">Live Stats </a>
     </li>
-  </ul>
+
+</ul>
+
 </div>
 
   <router-outlet></router-outlet>

@@ -12,14 +12,14 @@ td, th {
 }
 
 .bg-form {
-  background: #000c;
-  color: #fff;
+  background: #fffc;
+  color: #000;
   padding: 5% 5%;
   margin: 5%;
 }
 
 input#mat-input-0 {
-  color: #fff;
+  color: #000;
 }
 
 .btn{
@@ -32,11 +32,11 @@ input#mat-input-0 {
 }
 
 .ng-invalid.ng-touched.ng-dirty {
-  color: #fff !important;
+  color: #000;
 }
 .mat-dialog-container {
-  background: #000000c2 !important;
-  color: #fff !important;
+  background: #fffc !important;
+  color: #000 !important;
 }
 div#cdk-overlay-0, .cdk-overlay-pane {
   width: 100% !important;
@@ -47,12 +47,16 @@ div#cdk-overlay-0, .cdk-overlay-pane {
 
 
 .mat-dialog-title{
-  color: #000 !important;
+  color: #fff !important;
 }
 
 .mat-h1, .mat-headline, .mat-typography h1 {
   font: 400 24px/32px Roboto, "Helvetica Neue", sans-serif;
   letter-spacing: normal;
   margin: 0 0 16px;
-  color: #000 !important;
+  color: #fff !important;
+}
+
+h1{
+  color: #000;
 }

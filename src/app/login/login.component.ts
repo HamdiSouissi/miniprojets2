@@ -31,7 +31,7 @@ onSubmit() {
   this.accountService.login(this.f.email.value,this.f.password.value).subscribe(res=>{
     if(res)
     {
-      this.router.navigate(['/dashboard'])
+      this.router.navigate(['/Live-stat'])
     }
   },
   err =>{
